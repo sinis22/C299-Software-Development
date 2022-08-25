@@ -75,7 +75,6 @@ public class RockPaperScissors {
     static void playAgain(){
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(" ");
         System.out.println("Do you want to play again");
         String playAgain = scanner.nextLine();
 
@@ -96,7 +95,6 @@ public class RockPaperScissors {
                 System.exit(0);
             }
         } else{
-            System.out.println(" ");
             System.out.println("Thanks for Playing!");
             System.exit(0);
         }
