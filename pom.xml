@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>groupId</groupId>
-    <artifactId>C299 Software Development</artifactId>
+    <artifactId>C299_Software_Development</artifactId>
     <version>1.0-SNAPSHOT</version>
     <build>
         <plugins>
