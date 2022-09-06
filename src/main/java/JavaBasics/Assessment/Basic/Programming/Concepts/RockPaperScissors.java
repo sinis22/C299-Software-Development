@@ -17,6 +17,7 @@ public class RockPaperScissors {
         int numberOfRounds = Integer.parseInt(scanner.nextLine());
         if (numberOfRounds <= 10) {
             for (int i = 0; i < numberOfRounds; i++) {
+                //printing out the accumulative score with round number
                 System.out.println("                      ");
                 System.out.println("-------------------------");
                 System.out.println("Round number " + (i + 1));
@@ -39,11 +40,13 @@ public class RockPaperScissors {
 
         System.out.println("Your turn (rock, paper or scissors)");
         String playerMove = scanner.nextLine();
+        //validating the player input
         if ("paper".equals(playerMove) || "scissors".equals(playerMove) || "rock".equals(playerMove)) {
 
             Random random = new Random();
-            int randomMove = random.nextInt(3);
+            int randomMove = random.nextInt(3); // generating a random number for the computer to play their move
 
+            // the number to play equivalent
             String computerMove;
             if (randomMove == 0) {
                 computerMove = "rock";
@@ -54,12 +57,13 @@ public class RockPaperScissors {
             }
             System.out.println("Computer chose " + computerMove + "!");
 
+            // outcome of who won the round
             if (playerMove.equals(computerMove)) {
                 System.out.println("It's a tie!");
                 Ties = Ties + 1;
             } else if (playerWins(playerMove, computerMove)) {
                 System.out.println("Player wins!");
-                PlayerScore = PlayerScore + 1;
+                PlayerScore = PlayerScore + 1; // implementing score
             } else {
                 System.out.println("Computer wins!");
                 ComputerScore = ComputerScore + 1;
@@ -70,6 +74,7 @@ public class RockPaperScissors {
             Rounds();
         }
     }
+    //Method to say which combinations can the player win the round
     static boolean playerWins(String playerMove, String computerMove) {
         if (playerMove.equals("rock")) {
             return computerMove.equals("scissors");
@@ -79,6 +84,8 @@ public class RockPaperScissors {
             return computerMove.equals("paper");
         }
     }
+
+    //Method to print out who won overall after all the rounds are played
     static void OverallWinner() {
         if (PlayerScore > ComputerScore && PlayerScore >= Ties) {
             System.out.println("                      ");
@@ -110,6 +117,7 @@ public class RockPaperScissors {
         }
     }
 
+    // Method for if the player wants to play again
     static void playAgain() {
         Scanner scanner = new Scanner(System.in);
 
